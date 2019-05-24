@@ -34,11 +34,12 @@ namespace CalkiNumeryczne
                 tab[1, i] = oblicz(tab[0, i]);
                 listBox1.Items.Add(tab[1, i]);
             }
-            double h = ((B-A) / lp)/2;
+            double h = ((B-A) / lp)/3;
             double suma = tab[1,0]+tab[1,tab.GetLength(1)-1];
-            for (int i = 1; i < tab.GetLength(0)-1; i++)
+            suma =suma+ 2*(tab[1, 1] + tab[1, tab.GetLength(1) - 2]);
+            for (int i = 2; i < tab.GetLength(0)-2; i++)
             {
-                suma += 2*tab[1, i];
+                 suma += 4 * tab[1, i]; 
             }
             double wynik = suma * h;
             EqualsTextBox.Text = wynik.ToString();
