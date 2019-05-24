@@ -35,7 +35,7 @@ namespace CalkiNumeryczne
                 listBox1.Items.Add(tab[1, i]);
             }
             double h = ((B-A) / lp)/2;
-            double suma = 0;
+            double suma = tab[1,0]+tab[1,tab.GetLength(1)-1];
             for (int i = 1; i < tab.GetLength(0)-1; i++)
             {
                 suma += 2*tab[1, i];
